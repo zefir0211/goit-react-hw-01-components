@@ -19,7 +19,7 @@ export const ContainerHead = styled.thead`
 `;
 
 export const ContainerHeadList = styled.tr`
-   
+
 `;
 
 export const ContainerHeadItem = styled.th`

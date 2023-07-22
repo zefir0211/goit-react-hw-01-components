@@ -5,13 +5,13 @@ export const TransactionHistory = ({transactions}) => {
     return (
         <Container>
             <ContainerHead>
-                <tr>
+                <ContainerHeadList>
                     <ContainerHeadItem>Type</ContainerHeadItem>
                     <ContainerHeadItem>Amount</ContainerHeadItem>
                     <ContainerHeadItem>Currency</ContainerHeadItem>
-                </tr>
+                </ContainerHeadList>
             </ContainerHead>
-            <tbody>
+            <ContainerInfo>
                 {transactions.map(transaction => (
                     <ContainerInfoList key={transaction.id}>
                         <ContainerInfoItem>{transaction.type}</ContainerInfoItem>
@@ -19,7 +19,7 @@ export const TransactionHistory = ({transactions}) => {
                         <ContainerInfoItem>{transaction.currency}</ContainerInfoItem>
                     </ContainerInfoList>
                 ))}
-            </tbody>
+            </ContainerInfo>
         </Container>
     );
 };
