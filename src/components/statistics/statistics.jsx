@@ -2,16 +2,16 @@ import PropTypes from 'prop-types';
 import { Container, Title, StatList, StatItem, Label, Percentage } from './statistics.styled';
 
 export const Statistics = ({
-    data
+    title, stats
 }) => {
     return (
         <Container>
-            <Title>Upload stats</Title>
+            {title && <Title>{title}</Title>}
             <StatList>
-                {data.map(data => (
-                    <StatItem key={data.id}>
-                        <Label>{data.label}</Label>
-                        <Percentage>{data.percentage}%</Percentage>
+                {stats.map(stat => (
+                    <StatItem key={stat.id}>
+                        <Label>{stat.label}</Label>
+                        <Percentage>{stat.percentage}%</Percentage>
                     </StatItem>
                 ))}
             </StatList>
@@ -20,5 +20,12 @@ export const Statistics = ({
 };
 
 Statistics.propTypes = {
-    data: PropTypes.array,
+    stats: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            label: PropTypes.string.isRequired,
+            percentage: PropTypes.number.isRequired,
+        })
+    ).isRequired,
+    title: PropTypes.string,
 };

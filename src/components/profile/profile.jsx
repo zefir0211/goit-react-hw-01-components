@@ -18,7 +18,6 @@ export const Profile = ({
                 <Img
                 src={avatar}
                 alt="User avatar"
-                class="avatar"
                 ></Img>
                 <Name>{username}</Name>
                 <Tag>{tag}</Tag>
